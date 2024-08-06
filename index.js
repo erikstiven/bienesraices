@@ -1,12 +1,19 @@
 import express from 'express'
+import usuarioRoutes from './routes/usuarioRoutes.js'
 
 // Crear la app
 const app = express()
 
+//habilitar Pug
+app.set('view engine', 'pug')
+app.set('views', './views')
+
+//carpeta publica
+app.use( express.static('public'))
+
 //Routing - definir los endpoints
-app.get('/', function (req, res){
-    res.json({msg: 'Welcome'})
-});
+app.use('/auth', usuarioRoutes)
+
 
 
 //Definir un purto y arrancar el proyecto
