@@ -1,6 +1,27 @@
 extends ../layout/index
 
 block contenido
-    div 
-        h2.text-center.text-2xl.font-extrabold Crear Cuenta
+    py-10 
+        h1.text-4xl.my-10.font-extrabold.text-center Bienes
+            span.font-normal Raices
+        h2.text-center.text-2xl.font-extrabold= pagina
+            .mt-8.mx-auto.max-w-md
+                .bg-white.py-8.px-4.shadow
+                    form.space-y-5
+                        div
+                            label.block.text-sm.uppercase.text-gray-500.mb-3.text-left.font-bold(for="nombre") Tu nombre
+                            input#nombre.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400.font-normal.text-lg(placeholder= "Tu nombre" type="text" name="nombre")
+                        div
+                            label.block.text-sm.uppercase.text-gray-500.mb-3.text-left.font-bold(for="email") Email de registro
+                            input#email.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400.font-normal.text-lg(placeholder= "Tu email" type="text" name="email")
+                        div
+                            label.block.text-sm.uppercase.text-gray-500.mb-3.text-left.font-bold(for="password") Password
+                            input#password.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400.font-normal.text-lg(placeholder= "Tu password" type="text" name="password")
+                        div
+                            label.block.text-sm.uppercase.text-gray-500.mb-3.text-left.font-bold(for="repetir_password") Repetir Password
+                            input#repetir_password.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400.font-normal.text-lg(placeholder= "Repite tu password" type="text" name="repetir_password")
+                        div(class="flex items-center justify-between")
+                            a(class="text-gray-500 text-xs" href="/auth/login") Ya tienes cuenta? Inicia Sesión
+                            a(class="text-gray-500 text-xs" href="/auth/olvide-password") Olvide mi Password
 
+                        input(class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 cursor-pointer font-extralight text-lg rounded-md" type="submit" value= "Crear cuenta")
